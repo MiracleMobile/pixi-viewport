@@ -310,4 +310,8 @@ export class PluginManager
 
         return result;
     }
+
+    public refresh(name: string): void {
+        this.plugins[name]?.refresh();
+    }
 }

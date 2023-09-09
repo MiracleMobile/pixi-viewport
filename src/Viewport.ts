@@ -1324,6 +1324,10 @@ export class Viewport extends Container
             this.emit('moved', { viewport: this, type: 'ensureVisible' });
         }
     }
+
+    public refresh(name: string): void {
+        this.plugins.refresh(name);
+    }
 }
 
 /**

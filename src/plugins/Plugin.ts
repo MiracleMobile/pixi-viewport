@@ -88,4 +88,9 @@ export class Plugin
     {
         this.paused = false;
     }
+
+    public refresh(): void 
+    {
+        
+    }
 }

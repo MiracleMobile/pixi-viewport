@@ -210,4 +210,15 @@ export class Pinch extends Plugin
 
         return false;
     }
+
+    public refresh(): void
+    {
+        this.active = false;
+        this.lastCenter = null;
+        this.pinching = false;
+        this.moved = false;
+        this.parent.emit('pinch-end', this.parent);
+
+        this.parent.input.clear();
+    }
 }
