@@ -191,7 +191,7 @@ export class InputManager
             this.isMouseDown = false;
         }
 
-        if (event.pointerType !== 'mouse')
+        if (event.type === "pointerup")
         {
             this.remove(event.pointerId);
         }

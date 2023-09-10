@@ -2,7 +2,7 @@ import { Plugin } from './Plugin';
 import { Point } from '@pixi/core';
 
 import type { IPointData } from '@pixi/core';
-import type { FederatedPointerEvent } from '@pixi/events';
+import type { FederatedPointerEvent, FederatedEvent } from '@pixi/events';
 import type { IViewportTouch } from '../InputManager';
 import type { Viewport } from '../Viewport';
 
@@ -192,9 +192,9 @@ export class Pinch extends Plugin
         return false;
     }
 
-    public up(): boolean
+    public up(event: FederatedEvent): boolean
     {
-        if (this.pinching)
+        if (this.pinching && event.type == "pointerup")
         {
             if (this.parent.input.touches.length <= 1)
             {
